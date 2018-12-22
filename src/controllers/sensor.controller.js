@@ -19,7 +19,7 @@ exports.create = (req, res, next) => {
 };
 
 exports.details = (req, res, next) => {
-    Sensor.findById(req.params.id, (error, sensor) => {
+    Sensor.findOne({ uid: req.params.uid }, (error, sensor) => {
         if (error) {
             res.sendStatus(400) // BAD REQUEST (todo: see if it was an actual bad request)
             return next(error);
@@ -30,7 +30,7 @@ exports.details = (req, res, next) => {
 };
 
 exports.update = function (req, res, next) {
-    Sensor.findByIdAndUpdate(req.params.id, { $set: req.body }, (error, sensor) => {
+    Sensor.findOneAndUpdate({ uid: req.params.uid }, { $set: req.body }, (error, sensor) => {
         if (error) {
             res.sendStatus(400) // BAD REQUEST (todo: see if it was an actual bad request)
             return next(error);
@@ -40,7 +40,7 @@ exports.update = function (req, res, next) {
 };
 
 exports.delete = function (req, res, next) {
-    Sensor.findByIdAndRemove(req.params.id, (error) => {
+    Sensor.findOneAndDelete({ uid: req.params.uid }, (error) => {
         if (error) {
             res.sendStatus(400) // BAD REQUEST (todo: see if it was an actual bad request)
             return next(error);
