@@ -25,9 +25,9 @@ const sensorController = require('../controllers/sensor.controller');
  *     }
  */
 router.post('/create', sensorController.create);
-router.get('/:id', sensorController.details);
-router.put('/:id', sensorController.update);
-router.patch('/:id', sensorController.update);
-router.delete('/:id', sensorController.delete);
+router.get('/:uid', sensorController.details);
+router.put('/:uid', sensorController.update);
+router.patch('/:uid', sensorController.update);
+router.delete('/:uid', sensorController.delete);
 
 module.exports = router;
