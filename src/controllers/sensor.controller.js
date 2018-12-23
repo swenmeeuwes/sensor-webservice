@@ -35,6 +35,7 @@ exports.update = function (req, res, next) {
             res.sendStatus(400) // BAD REQUEST (todo: see if it was an actual bad request)
             return next(error);
         }
+
         res.send(sensor);
     });
 };
@@ -45,6 +46,7 @@ exports.delete = function (req, res, next) {
             res.sendStatus(400) // BAD REQUEST (todo: see if it was an actual bad request)
             return next(error);
         }
+        
         res.sendStatus(200); // OK
     });
 };
