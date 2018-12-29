@@ -13,7 +13,8 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongoose": "^5.4.0"
+    "mongoose": "^5.4.0",
+    "mongoose-unique-validator": "^2.0.2"
   },
   "devDependencies": {
     "apidoc": "^0.17.7",
