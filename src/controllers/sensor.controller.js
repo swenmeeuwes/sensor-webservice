@@ -10,7 +10,7 @@ exports.create = (req, res, next) => {
 
     sensor.save((error) => {
         if (error) {
-            res.sendStatus(400) // BAD REQUEST
+            res.sendStatus(400); // BAD REQUEST
             return next(error);
         }
 
@@ -21,7 +21,7 @@ exports.create = (req, res, next) => {
 exports.details = (req, res, next) => {
     Sensor.findOne({ uid: req.params.uid }, (error, sensor) => {
         if (error) {
-            res.sendStatus(400) // BAD REQUEST
+            res.sendStatus(400); // BAD REQUEST
             return next(error);
         }
 
@@ -32,7 +32,7 @@ exports.details = (req, res, next) => {
 exports.update = function (req, res, next) {
     Sensor.findOneAndUpdate({ uid: req.params.uid }, { $set: req.body }, (error, sensor) => {
         if (error) {
-            res.sendStatus(400) // BAD REQUEST
+            res.sendStatus(400); // BAD REQUEST
             return next(error);
         }
 
@@ -43,7 +43,7 @@ exports.update = function (req, res, next) {
 exports.delete = function (req, res, next) {
     Sensor.findOneAndDelete({ uid: req.params.uid }, (error) => {
         if (error) {
-            res.sendStatus(400) // BAD REQUEST
+            res.sendStatus(400); // BAD REQUEST
             return next(error);
         }
         
